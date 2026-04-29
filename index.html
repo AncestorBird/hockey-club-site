@@ -7,40 +7,265 @@
     <meta name="description" content="富山大学アイスホッケー部の公式ウェブサイトです。新入部員・マネージャー募集中！">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="top">
         <div class="header-inner">
-            <h1 class="logo"><a href="/">富山大学アイスホッケー部</a></h1>
-            <nav class="global-nav">
+            <a href="#top" class="logo">
+                <span class="logo-en">TOYAMA UNIV.</span>
+                <span class="logo-ja">アイスホッケー部</span>
+            </a>
+            <nav class="global-nav" id="globalNav">
                 <ul>
+                    <li><a href="#top">TOP</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#activity">Activity</a></li>
+                    <li><a href="#news">News</a></li>
                     <li><a href="#recruit">Recruit</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
     <main>
+
+        <!-- ===== HERO ===== -->
         <section class="hero">
+            <div class="hero-bg"></div>
             <div class="hero-content">
-                <h2>富山でしかできないウィンタースポーツをやろう。</h2>
-                <a href="#recruit" class="btn btn-primary">新歓情報を見る</a>
+                <p class="hero-sub">TOYAMA UNIVERSITY ICE HOCKEY CLUB</p>
+                <h1 class="hero-title">富山大学<br>アイスホッケー部</h1>
+                <p class="hero-catch">富山でしかできない<br>ウィンタースポーツをやろう。</p>
+                <div class="hero-btns">
+                    <a href="#recruit" class="btn btn-primary">新歓情報を見る</a>
+                    <a href="#about" class="btn btn-outline">About Us</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>SCROLL</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
 
-        <section id="about" class="section">
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="section section-white">
             <div class="section-inner">
-                <h2 class="section-title">About Us</h2>
-                <p>富山大学を拠点に活動するアイスホッケー部です。大学から始めた選手たちで頑張っています！！</p>
+                <div class="section-header">
+                    <p class="section-label">ABOUT US</p>
+                    <h2 class="section-title">私たちについて</h2>
+                </div>
+                <div class="about-body">
+                    <div class="about-text">
+                        <p>富山大学アイスホッケー部は、北陸の雄大な自然に囲まれた富山を拠点に活動するチームです。大学から始めた選手がほとんどで、初心者でも安心して参加できる環境を整えています。</p>
+                        <p>練習は週複数回、地元のアイスアリーナを使用。勝利を目指しながらも、仲間との絆を大切にしたチームです。</p>
+                    </div>
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <div class="about-card-icon">🏒</div>
+                            <h3>初心者歓迎</h3>
+                            <p>スケート未経験でも大丈夫。先輩が丁寧にサポートします。</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">🤝</div>
+                            <h3>チームの絆</h3>
+                            <p>部員同士の仲が良く、練習後も一緒に楽しく活動しています。</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">🏆</div>
+                            <h3>公式試合に出場</h3>
+                            <p>北信越リーグをはじめ各種大会に参加し、勝利を目指します。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- ===== ACTIVITY ===== -->
+        <section id="activity" class="section section-dark">
+            <div class="section-inner">
+                <div class="section-header">
+                    <p class="section-label">ACTIVITY</p>
+                    <h2 class="section-title">活動情報</h2>
+                </div>
+                <div class="activity-grid">
+                    <div class="activity-item">
+                        <div class="activity-item-head">
+                            <span class="activity-icon">📍</span>
+                            <h3>活動場所</h3>
+                        </div>
+                        <p>富山市内アイスアリーナ</p>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-item-head">
+                            <span class="activity-icon">📅</span>
+                            <h3>練習日</h3>
+                        </div>
+                        <p>週2〜3回（時期により変動）</p>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-item-head">
+                            <span class="activity-icon">💰</span>
+                            <h3>費用</h3>
+                        </div>
+                        <p>月会費・用具レンタルあり<br>詳細はお問い合わせください</p>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-item-head">
+                            <span class="activity-icon">🎓</span>
+                            <h3>対象</h3>
+                        </div>
+                        <p>富山大学在籍の学生<br>（男女問わず・未経験OK）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NEWS ===== -->
+        <section id="news" class="section section-white">
+            <div class="section-inner">
+                <div class="section-header">
+                    <p class="section-label">NEWS &amp; TOPICS</p>
+                    <h2 class="section-title">お知らせ</h2>
+                </div>
+                <ul class="news-list">
+                    <li class="news-item">
+                        <time class="news-date">2026.04.01</time>
+                        <span class="news-tag tag-info">お知らせ</span>
+                        <a href="#" class="news-title">2026年度 新歓活動開始のお知らせ</a>
+                    </li>
+                    <li class="news-item">
+                        <time class="news-date">2026.03.15</time>
+                        <span class="news-tag tag-result">試合結果</span>
+                        <a href="#" class="news-title">北信越学生アイスホッケーリーグ 春季大会 結果報告</a>
+                    </li>
+                    <li class="news-item">
+                        <time class="news-date">2026.02.20</time>
+                        <span class="news-tag tag-info">お知らせ</span>
+                        <a href="#" class="news-title">練習見学・体験参加について</a>
+                    </li>
+                    <li class="news-item">
+                        <time class="news-date">2026.01.10</time>
+                        <span class="news-tag tag-result">試合結果</span>
+                        <a href="#" class="news-title">冬季大会 試合結果報告</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== RECRUIT ===== -->
+        <section id="recruit" class="section section-accent">
+            <div class="section-inner">
+                <div class="section-header">
+                    <p class="section-label">RECRUIT</p>
+                    <h2 class="section-title">部員募集中！</h2>
+                </div>
+                <div class="recruit-body">
+                    <div class="recruit-text">
+                        <h3>2026年度 新入部員・マネージャー<br>大募集！</h3>
+                        <p>アイスホッケーをやってみたい人、スポーツが好きな人、仲間を作りたい人——みんな大歓迎です！スケート未経験でも丁寧に教えます。まずは見学や体験から気軽に参加してください。</p>
+                        <ul class="recruit-points">
+                            <li>✅ スケート・ホッケー未経験者歓迎</li>
+                            <li>✅ 用具の貸し出しあり</li>
+                            <li>✅ マネージャーも募集中</li>
+                            <li>✅ 見学・体験随時受付</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">お問い合わせ・見学申込</a>
+                    </div>
+                    <div class="recruit-flyer">
+                        <img src="contents/photo_flyer_2026.png" alt="2026年度 新歓フライヤー">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SNS ===== -->
+        <section class="section-sns">
+            <div class="section-inner">
+                <p class="sns-heading">SNS で最新情報をチェック</p>
+                <div class="sns-links">
+                    <a href="#" class="sns-link sns-twitter" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <span>Twitter / X</span>
+                    </a>
+                    <a href="#" class="sns-link sns-instagram" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="sns-link sns-line" aria-label="LINE">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                        <span>LINE 公式</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="section section-white">
+            <div class="section-inner">
+                <div class="section-header">
+                    <p class="section-label">CONTACT</p>
+                    <h2 class="section-title">お問い合わせ</h2>
+                </div>
+                <div class="contact-body">
+                    <p class="contact-desc">見学・体験参加のお申込み、部活についてのご質問はSNSのDMまたは以下のメールアドレスからお気軽にどうぞ。</p>
+                    <a href="mailto:toyama.icehockey@example.com" class="contact-email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        toyama.icehockey@example.com
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>&copy; 2026 富山大学アイスホッケー部</p>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-en">TOYAMA UNIV.</span>
+                <span class="logo-ja">アイスホッケー部</span>
+            </div>
+            <nav class="footer-nav">
+                <a href="#top">TOP</a>
+                <a href="#about">About</a>
+                <a href="#activity">Activity</a>
+                <a href="#news">News</a>
+                <a href="#recruit">Recruit</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2026 富山大学アイスホッケー部</p>
+        </div>
     </footer>
+
+    <script>
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('globalNav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            nav.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                nav.classList.remove('open');
+            });
+        });
+
+        // Header shrink on scroll
+        const header = document.getElementById('top').closest ? document.querySelector('.header') : document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
 </body>
 </html>
