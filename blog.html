@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>部員ブログ | 富山大学アイスホッケー部</title>
-    <meta name="description" content="富山大学アイスホッケー部 部員ブログ。練習の様子、試合レポート、日々の出来事をお届けします。">
+    <meta name="description" content="富山大学アイスホッケー部 部員ブログ。練習の様子、試合レポート、日々の出来事を部員自身の視点でお届けします。">
+    <meta name="keywords" content="富山大学,アイスホッケー部,ブログ,部員ブログ,試合レポート,練習日記">
+    <meta name="author" content="富山大学アイスホッケー部">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#002855">
+    <link rel="canonical" href="https://ancestorbird.github.io/hockey-club-site/blog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="blog">
+    <meta property="og:site_name" content="富山大学アイスホッケー部">
+    <meta property="og:title" content="部員ブログ | 富山大学アイスホッケー部">
+    <meta property="og:description" content="練習の様子、試合レポート、日々の出来事を部員自身の視点でお届けします。">
+    <meta property="og:url" content="https://ancestorbird.github.io/hockey-club-site/blog.html">
+    <meta property="og:image" content="https://ancestorbird.github.io/hockey-club-site/contents/photo_flyer_2026.png">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="部員ブログ | 富山大学アイスホッケー部">
+    <meta name="twitter:description" content="練習の様子、試合レポート、日々の出来事を部員自身の視点でお届けします。">
+    <meta name="twitter:image" content="https://ancestorbird.github.io/hockey-club-site/contents/photo_flyer_2026.png">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- 構造化データ: Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "富山大学アイスホッケー部 部員ブログ",
+      "url": "https://ancestorbird.github.io/hockey-club-site/blog.html",
+      "description": "練習・試合・日常を部員自身の視点でお届け",
+      "inLanguage": "ja",
+      "publisher": {
+        "@type": "SportsClub",
+        "name": "富山大学アイスホッケー部",
+        "url": "https://ancestorbird.github.io/hockey-club-site/"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -120,13 +158,35 @@
                 list.innerHTML = posts.map(post => `
                     <article class="blog-post" id="${post.id}">
                         <header class="blog-post-head">
-                            <time class="blog-post-date">${formatDate(post.date)}</time>
+                            <time class="blog-post-date" datetime="${post.date}">${formatDate(post.date)}</time>
                             <span class="blog-post-author">by ${post.author}</span>
                         </header>
                         <h2 class="blog-post-title">${post.title}</h2>
                         <div class="blog-post-body">${post.body}</div>
                     </article>
                 `).join('');
+
+                const baseUrl = 'https://ancestorbird.github.io/hockey-club-site/';
+                const stripHtml = (html) => html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+                const ld = {
+                    "@context": "https://schema.org",
+                    "@type": "Blog",
+                    "name": "富山大学アイスホッケー部 部員ブログ",
+                    "url": baseUrl + "blog.html",
+                    "blogPost": posts.map(post => ({
+                        "@type": "BlogPosting",
+                        "headline": post.title,
+                        "datePublished": post.date,
+                        "author": { "@type": "Person", "name": post.author },
+                        "url": baseUrl + "blog.html#" + post.id,
+                        "description": stripHtml(post.body).slice(0, 160),
+                        "inLanguage": "ja"
+                    }))
+                };
+                const script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.textContent = JSON.stringify(ld);
+                document.head.appendChild(script);
             })
             .catch(err => {
                 document.getElementById('blog-list').innerHTML =
