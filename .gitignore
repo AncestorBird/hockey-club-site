@@ -1,2 +1,6 @@
 .DS_Store
 .claude/
+dist/
+__pycache__/
+.venv/
+artifacts/
