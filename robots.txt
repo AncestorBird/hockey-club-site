@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ancestorbird.github.io/hockey-club-site/sitemap.xml
